@@ -63,8 +63,8 @@ const Register = () => {
       createUserWithEmailAndPassword(auth, login, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log("USER CRIADO. \n", user);
-          user.displayName = name;
+          handleOpen();
+          setMessage("Usuário criado com sucesso!");
         })
         .catch((error) => {
           const errorCode = error.code;
