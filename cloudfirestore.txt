@@ -1,0 +1,13 @@
+React:
+
+
+React-Router DOM
+Hooks
+Props
+Components
+
+Firebase:
+
+Auth,
+GoogleAuthProvider
+
