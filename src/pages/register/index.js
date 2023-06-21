@@ -29,7 +29,11 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  updateProfile,
+} from "firebase/auth";
 
 const Register = () => {
   const [open, setOpen] = useState(false);
@@ -63,8 +67,18 @@ const Register = () => {
       createUserWithEmailAndPassword(auth, login, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          handleOpen();
-          setMessage("Usuário criado com sucesso!");
+          const auth = getAuth();
+          updateProfile(auth.currentUser, {
+            displayName: name,
+          })
+            .then(() => {
+              console.log("user name atualizado");
+              handleOpen();
+              setMessage("Usuário criado com sucesso!");
+            })
+            .catch((error) => {
+              console.log(error);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;

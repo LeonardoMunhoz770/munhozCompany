@@ -4,16 +4,16 @@ import React, { useState } from "react";
 import SideBar from "../sideBar";
 
 export const Header = () => {
-  const [sideBar, setSideBar] = useState(false);
+  const [sideBarShow, setSideBarShow] = useState(false);
 
   const showSideBar = () => {
-    setSideBar(!sideBar);
+    setSideBarShow(!sideBarShow);
   };
 
   return (
     <Container>
       <BsListUl onClick={showSideBar} color="white" />
-      {sideBar && <SideBar active={setSideBar} />}
+      {sideBarShow && <SideBar active={setSideBarShow} />}
     </Container>
   );
 };

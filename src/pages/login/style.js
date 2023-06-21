@@ -78,10 +78,11 @@ export const ImageLogin = styled.img`
 
 export const Subtitle = styled.p`
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+  font-family: "Poppins", sans-serif;
   color: white;
   font-size: 35px;
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
+
   @media (max-width: 950px) {
     text-align: center;
     width: 100%;

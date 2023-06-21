@@ -75,6 +75,8 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           localStorage.setItem("displayName", user.email);
+          localStorage.setItem("AccesToken", user.accessToken);
+          localStorage.setItem("Uid", user.uid);
           window.location.assign("/homePage");
         })
         .catch((error) => {
@@ -111,8 +113,9 @@ const Login = () => {
         //const credential = GoogleAuthProvider.credentialFromResult(result);
         //const token = credential.accessToken;
         const user = result.user;
-        console.log(user);
+        localStorage.setItem("AccesToken", user.accessToken);
         localStorage.setItem("displayName", user.email);
+        localStorage.setItem("Uid", user.uid);
         window.location.assign("/homePage");
       })
       .catch((error) => {

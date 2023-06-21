@@ -21,7 +21,7 @@ const SideBar = ({ active }) => {
   };
 
   return (
-    <Container sidebar={active}>
+    <Container sidebar={active ? "true" : "false"}>
       <FaTimes onClick={closeSideBar} />
       <Content>
         <ContentAccount>Olá, {name}</ContentAccount>

@@ -1,7 +1,14 @@
+import AccountInformations from "../../components/accountInformations";
 import Header from "../../components/header";
+import { useState } from "react";
 
 const Account = () => {
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <AccountInformations />
+    </>
+  );
 };
 
 export default Account;
